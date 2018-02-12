@@ -12,20 +12,20 @@ node {
 
        stage('Compiling'){
 
-          sh 'mvn clean install'
+          cmd 'mvn clean install'
        }
 	   
       stage('Sonar') {
                     //add stage sonar
-                    sh 'mvn sonar:sonar'
+                    cmd 'mvn sonar:sonar'
                 }
 	    
 	stage('Checkstyle') {
-                    sh 'mvn checkstyle:checkstyle'
+                    cmd 'mvn checkstyle:checkstyle'
                 }
 
                stage('PMD') {
-                    sh 'mvn pmd:check'
+                    cmd 'mvn pmd:check'
                 }
       /* stage('mail'){
 
